@@ -33,7 +33,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.spals</groupId>
     <artifactId>spals-parent-pom</artifactId>
-    <version>1</version>
+    <version>2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>parent-pom</name>
