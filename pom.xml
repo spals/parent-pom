@@ -88,35 +88,10 @@
         <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>ossrh-snapshots</id>
-            <name>ossrh-snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>ossrh-releases</id>
-            <name>ossrh-releases</name>
-            <url>https://oss.sonatype.org/content/repositories/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
-            <name>Sonatype Nexus snapshot repository</name>
+            <name>Sonatype Nexus OSS Snapshot Repository</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
