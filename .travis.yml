@@ -21,6 +21,10 @@ install:
 script:
   - mvn --batch-mode --settings .travis/settings.xml --show-version test
 
+before_deploy:
+  - mvn --settings .travis/settings.xml --show-version dependency:resolve -Ddeploy
+  - mvn --settings .travis/settings.xml --show-version dependency:resolve-plugins -Ddeploy
+
 deploy:
   - provider: script
     script: .travis/deploy-lib.sh
