@@ -26,13 +26,13 @@ deploy:
     script: .travis/deploy-lib.sh
     skip_cleanup: true
     on:
-      repo: spals/midas
+      repo: spals/parent-pom
       branch: master
       jdk: oraclejdk8
   - provider: script
     script: .travis/deploy-lib.sh
     skip_cleanup: true
     on:
-      repo: spals/midas
+      repo: spals/parent-pom
       tags: true
       jdk: oraclejdk8
