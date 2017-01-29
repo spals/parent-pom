@@ -34,7 +34,7 @@
     <groupId>net.spals</groupId>
     <artifactId>spals-parent-pom</artifactId>
     <version>3-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>parent-pom</name>
     <description>
