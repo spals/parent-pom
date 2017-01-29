@@ -26,10 +26,7 @@ then
     function join { local IFS="$1"; shift; echo "$*"; }
     NEW_SNAPSHOT_VERSION="$(join . ${TRAVIS_TAG_ARRAY[@]})-SNAPSHOT"
 
-    echo "setting new SNAPSHOT version to ${NEW_SNAPSHOT_VERSION}"
-    mvn --settings .travis/settings.xml org.codehaus.mojo:versions-maven-plugin:2.1:set -DgenerateBackupPoms=false -DnewVersion=${NEW_SNAPSHOT_VERSION} 1>/dev/null 2>/dev/null
-    git commit -a -m "[ci skip] Bump version to ${NEW_SNAPSHOT_VERSION}"
-    git push origin master
+    echo "POST RELEASE COMMAND: mvn versions:set -DgenerateBackupPoms=false -DnewVersion=${NEW_SNAPSHOT_VERSION}"
 else
     echo "not on a tag -> keep snapshot version in pom.xml"
     mvn --batch-mode --settings .travis/settings.xml --update-snapshots clean deploy -Ddeploy -DskipTests
