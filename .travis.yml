@@ -27,14 +27,14 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: .travis/deploy-lib.sh
+    script: .travis/deploy-lib.sh .travis/settings.xml
     skip_cleanup: true
     on:
       repo: spals/parent-pom
       branch: master
       jdk: oraclejdk8
   - provider: script
-    script: .travis/deploy-lib.sh
+    script: .travis/deploy-lib.sh .travis/settings.xml
     skip_cleanup: true
     on:
       repo: spals/parent-pom
