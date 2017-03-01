@@ -78,6 +78,7 @@
         <catch-exception.version>2.0.0-ALPHA-1</catch-exception.version>
         <freebuilder.version>1.10.6</freebuilder.version>
         <guava.version>20.0</guava.version>
+        <guice.version>4.1.0</guice.version>
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <jackson.version>2.7.8</jackson.version>
         <mockito.version>2.2.26</mockito.version>
@@ -108,14 +109,14 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.google.auto.value</groupId>
-                <artifactId>auto-value</artifactId>
-                <version>${auto-value.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auto.value</groupId>
+                <artifactId>auto-value</artifactId>
+                <version>${auto-value.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -127,6 +128,26 @@
                 <artifactId>guava-testlib</artifactId>
                 <version>${guava.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-assistedinject</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-multibindings</artifactId>
+                <version>${guice.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.inject.extensions</groupId>
+                <artifactId>guice-servlet</artifactId>
+                <version>${guice.version}</version>
             </dependency>
             <dependency>
                 <groupId>eu.codearte.catch-exception</groupId>
