@@ -93,6 +93,7 @@
         <docker-maven-plugin.version>0.21.0</docker-maven-plugin.version>
         <download-maven-plugin.version>1.3.0</download-maven-plugin.version>
         <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.7.9</jacoco-maven-plugin.version>
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
         <maven-failsafe-plugin.version>2.8.1</maven-failsafe-plugin.version>
@@ -307,6 +308,26 @@
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                     </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>default-prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>default-prepare-agent-integration</id>
+                            <goals>
+                                <goal>prepare-agent-integration</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <plugin>
@@ -590,6 +611,49 @@
                                 <goals>
                                     <goal>compile</goal>
                                 </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>runJacoco</id>
+            <activation>
+                <file>
+                    <exists>src/test</exists>
+                </file>
+                <property>
+                    <name>runJacoco</name>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>jacoco-report-aggregate</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>report-aggregate</goal>
+                                </goals>
+                                <configuration>
+                                    <excludes>
+                                        <!-- Exclude annotations -->
+                                        <exclude>**/annotations/**/*</exclude>
+                                        <!-- Exclude generated FreeBuilder beans -->
+                                        <exclude>**/*_Builder*</exclude>
+                                        <!-- Exclude generated AutoValue beans -->
+                                        <exclude>**/*AutoValue_*</exclude>
+                                        <!-- Exclude generated Protobuf beans -->
+                                        <exclude>**/protobuf/java/**/*</exclude>
+                                        <exclude>**/protobuf/scala/**/*</exclude>
+                                    </excludes>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
