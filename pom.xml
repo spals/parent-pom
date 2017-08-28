@@ -659,12 +659,6 @@
                                     <goal>prepare-agent-integration</goal>
                                 </goals>
                             </execution>
-                            <execution>
-                                <id>jacoco-merge</id>
-                                <goals>
-                                    <goal>merge</goal>
-                                </goals>
-                            </execution>
                         </executions>
                     </plugin>
                 </plugins>
