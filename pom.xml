@@ -733,6 +733,18 @@
                                 <goals>
                                     <goal>report</goal>
                                 </goals>
+                                <configuration>
+                                    <scanForSources>true</scanForSources>
+                                    <sourceDirectories>
+                                        <!--
+                                        We assume a multi-module project here where the coverallsReport.marker
+                                        file is in a separate module. Since we are basing this on an aggregate
+                                        Jacoco report, we'll need to go back to the root of the multi-module
+                                        project in order to find all source files.
+                                        -->
+                                        <sourceDirectory>..</sourceDirectory>
+                                    </sourceDirectories>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
