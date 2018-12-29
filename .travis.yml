@@ -15,8 +15,8 @@ before_install:
   - if [ ! -z "${GPG_OWNERTRUST}" ]; then echo ${GPG_OWNERTRUST} | base64 --decode | ${GPG_EXECUTABLE} --import-ownertrust; fi
 
 install:
-  - mvn -T 2.0C --settings .travis/settings.xml --show-version dependency:resolve
-  - mvn -T 2.0C --settings .travis/settings.xml --show-version dependency:resolve-plugins
+  - mvn --quiet --settings .travis/settings.xml dependency:resolve
+  - mvn --quiet --settings .travis/settings.xml dependency:resolve-plugins
 
 script:
   - mvn -T 2.0C --batch-mode --settings .travis/settings.xml --show-version test
