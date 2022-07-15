@@ -85,7 +85,7 @@
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <jackson.version>2.9.10</jackson.version>
         <!-- Upgrade Jackson databind version for critical security patch -->
-        <jackson.databind.version>2.9.10.1</jackson.databind.version>
+        <jackson.databind.version>2.12.6.1</jackson.databind.version>
         <mockito.version>2.2.26</mockito.version>
         <scala-java8-compat.version>0.8.0</scala-java8-compat.version>
         <scalapb.version>0.5.47</scalapb.version>
