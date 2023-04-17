@@ -91,7 +91,7 @@
         <scalapb.version>0.5.47</scalapb.version>
         <scalatest.version>3.0.1</scalatest.version>
         <slf4j.version>1.7.21</slf4j.version>
-        <testng.version>6.9.10</testng.version>
+        <testng.version>7.7.0</testng.version>
 
         <!-- Plugin versions -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
